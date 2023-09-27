@@ -1,16 +1,296 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
 
-</head>
-<body>
+{% block content %}
+
+
+<div class="row slider p-2 ">
+  <div class="col-sm-5">
+    <marquee  direction="down" onmouseover="stop()" onmouseleave="start()" height="250px" >
+        <!-- start card-->
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'images/masala1.png'%}" class="img-fluid rounded-start" alt="...">
+          </div>
+        
+      
+          <div class="col-md-4">
+            <div class="card-body">
+               <h5 class="card-title">Masala</h5>
+                <p class="card-text">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                  1 kg || <s>1200/-</s> <b> 1000/-</b>
+                  <br><br> <a href="#" class="btn btn-outline-success">Cart
+                              <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                </p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>        
+          </div>        
+        </div>
+      </div>    
+          <!-- end card-->
+          <!--card2-->
+          <div class="card mb-3" >
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static 'images/Apple2.jpg'%}" class="img-fluid rounded-start" alt="...">
+              </div>
+            
+          
+              <div class="col-md-4">
+                <div class="card-body">
+                   <h5 class="card-title">Apple</h5>
+                    <p class="card-text">
+                      <i class="fa-solid fa-indian-rupee-sign"></i>
+                      1 Kg || <s>70/-</s> <b> 50/-</b>
+                      <br><br> <a href="#" class="btn btn-outline-success">Cart
+                                  <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                    </p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>        
+              </div>        
+            </div>
+          </div> 
+            <!--card2 end-->
+            <!--card3--> 
+            <div class="card mb-3" >
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{% static 'images/pineapple1.jpg'%}" class="img-fluid rounded-start" alt="...">
+                </div>
+              
+            
+                <div class="col-md-4">
+                  <div class="card-body">
+                     <h5 class="card-title">Pineapple</h5>
+                      <p class="card-text">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        1 Pc. || <s>70/-</s> <b> 50/-</b>
+                        <br><br> <a href="#" class="btn btn-outline-success">Cart
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                  </a>
+                      </p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>        
+                </div>        
+              </div>
+            </div> 
+              <!--card3 end-->
+              <!--card 4-->
+              <div class="card mb-3" >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'images/chips1.jpg'%}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                
+              
+                  <div class="col-md-4">
+                    <div class="card-body">
+                       <h5 class="card-title">Chips</h5>
+                        <p class="card-text">
+                          <i class="fa-solid fa-indian-rupee-sign"></i>
+                          12 Packs. || <s>60/-</s> <b> 50/-</b>
+                          <br><br> <a href="#" class="btn btn-outline-success">Cart
+                                      <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                        </p>
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>        
+                  </div>        
+                </div>
+              </div>
+                <!--card 4 end-->
+                <!--card 5-->
+                <div class="card mb-3" >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{% static 'images/horlicks1.png'%}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                  
+                
+                    <div class="col-md-4">
+                      <div class="card-body">
+                         <h5 class="card-title">Horlicks</h5>
+                          <p class="card-text">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            1 Kg || <s>300/-</s> <b> 250/-</b>
+                            <br><br> <a href="#" class="btn btn-outline-success">Cart
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                      </a>
+                          </p>
+                          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                      </div>        
+                    </div>        
+                  </div>
+                </div> 
+                <!--card5 end-->       
+    </marquee>
+        <a href="#"><img src="{% static 'images/Ganesh.png' %}" class="d-block w-100" style="height: 250px;"></a>
+  </div>
+  <div class="col-sm-7 p-3">
+    <!--start silder-->
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" style="height: 500px;border-radius: 20px ;">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="{% static 'images/1.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img src="{% static 'images/3.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+          
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="{% static 'images/2.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>       <!--end silder-->
+  </div>
+  <div class="row category bg-mycolor py-4 p-4">
+    {% for x in cdata %}
+    <div class="col-lg-2 col-md-4 col-sm-12">
+        <!-- start category -->
+        <div class="card" >
+          <img src="/{{x.cpic}}" style="max-height: 250px;" class="img-thumbnail"/>
+          <div class="card-body">
+            <a href="/user/product/?cid={{x.id}}" style="text-decoration: none;">
+              <p class="text-center"><b>{{x.cname}}</b></p>
+            </a>
+          </div>
+        </div>
+
+        <!-- end category -->
+    </div>
+    {% endfor %}
+</div>
+<!--Today Deals-->
+<div class="row py-3">
+  <div class="fs-3">Today <b class="txt-mycolor">Deals</b></div>
+
+  <!--Offers Product-->
+  {% for x in opdata %}
+     <div class="col-lg-2 col-md-3 col-sm-12">
+        <div class="card p-3 mt-2">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark ">
+          {{x.total_discount}} %
+            <span class="visually-hidden">unread messages</span>
+          </span>
+          <img src="/{{x.product_pic}}" class="card-img-top"/>
+          <div class="card body ">
+           <b>{{x.subcategory_name}}</b>
+              {{x.product_quantity}} 
+              <br><i class="fa-solid fa-indian-rupee-sign"></i><s>{{x.price}}/-</s><b>{{x.discount_price}}/-</b>
+              <form method="get"  action="/user/indexcart/">
+              <div class="input-group">
+                <b class="input-group-text" onclick="funm{{x.id}}()">
+                   <i class="fa-solid fa-minus"></i>
+                </b>
+                <input type="hidden" name="pname" value="{{x.subcategory_name}}" />
+                <input type="hidden" name="price" value="{{x.price}}" />
+                <input type="hidden" name="ppic" value="{{x.product_pic}}" />
+                <input type="hidden" name="pw" value="{{x.product_quantity}}" />
+                
+                <input type="text" value="0" name="qt" id="txtcard{{x.id}}" readonly class="form-control fs-5 text-center"/>
+                <b class="input-group-text"   onclick="funp{{x.id}}()">
+                    <i class="fa-solid fa-plus"></i>
+                </b>
+            </div>
+              <input type="submit" class="btn bg-mycolor text-light mt-1" style="width: 60px;"  value="Add"/>
+            </form>
+          </div>
+      </div>
+    </div>
+    <script>
+      var i{{x.id}}=0;
+          var txtc{{x.id}}=document.getElementById("txtcard{{x.id}}");
+      function funp{{x.id}}()
+      {
+          i{{x.id}}++;
+          txtc{{x.id}}.value=i{{x.id}};
+      }
+      function funm{{x.id}}()
+      {
+          if(i{{x.id}}>0)
+          {
+              i{{x.id}}--
+              txtc{{x.id}}.value=i{{x.id}};
+          }
+      }
     
-<h1 class="bg-danger" style="text-align: center;"><b>INDEX || USER APP </b></h1>
-<script src="{% static 'js/bootstrap.bundle.js'%}"></script>
-</body>
-</html>
+  </script>
+    {% endfor %}
+  <!--end offer product-->
+</div>
+<div class="row product  fs-4 p-3 ">
+    <div class="fs-3">Latest <b class="txt-mycolor">Product</b></div>
+     {% for x in pdata %}
+     <div class="col-lg-2 col-md-3 col-sm-12">
+        <!-- start product -->
+        <div class="card p-3 mt-2">
+          <img src="/{{x.product_pic}}" class="card-img-top"/>
+          <div class="card body ">
+           <b>{{x.subcategory_name}}</b>
+              {{x.product_quantity}} 
+              <br><i class="fa-solid fa-indian-rupee-sign"></i><s>{{x.price}}/-</s><b>{{x.discount_price}}/-</b>
+                <form method="get" action="/user/indexcart/">
+              <div class="input-group">
+                  <b class="input-group-text" onclick="funm{{x.id}}()">
+                     <i class="fa-solid fa-minus"></i>
+                  </b>
+                                <input type="hidden" name="pname" value="{{x.subcategory_name}}" />
+                                <input type="hidden" name="price" value="{{x.price}}" />
+                                <input type="hidden" name="ppic" value="{{x.product_pic}}" />
+                                <input type="hidden" name="pw" value="{{x.product_quantity}}" />
+                                
+                  <input type="text" name="qt" value="0" id="txtcard{{x.id}}" readonly class="form-control fs-5 text-center"/>
+                  <b class="input-group-text"  onclick="funp{{x.id}}()">
+                      <i class="fa-solid fa-plus"></i>
+                  </b>
+              </div>
+              <input type="submit" class="btn bg-mycolor text-light mt-1 " style="width: 60px;" value="Add"/>
+            </form>
+          </div>
+      </div>
+
+        <!-- end product -->
+    </div>
+    <script>
+      var i{{x.id}}=0;
+          var txtc{{x.id}}=document.getElementById("txtcard{{x.id}}");
+      function funp{{x.id}}()
+      {
+          i{{x.id}}++;
+          txtc{{x.id}}.value=i{{x.id}};
+      }
+      function funm{{x.id}}()
+      {
+          if(i{{x.id}}>0)
+          {
+              i{{x.id}}--
+              txtc{{x.id}}.value=i{{x.id}};
+          }
+      }
+    
+  </script>
+    {% endfor %}
+    
+</div>  
+
+{% endblock %}

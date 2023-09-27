@@ -1,10 +1,226 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+                  
+    <link href="{% static 'images/mall3.png'%}" rel="icon"/>
+    <title>Big Mall-Online shopping of my website</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+<style>  :root
+        {
+
+      --bgcolor:linear-gradient(60deg,#ffea00e6,#cc0000,#77cc00);
+        --txtcolor:#FF8800;
+        }
+        .bg-mycolor
+        {
+        background:var(--bgcolor)!important;
+        }
+        .txt-mycolor
+        {
+        color:var(--txtcolor)!important;
+        }
+        #menu
+        {
+        background:transparent !important;
+        }
+        #menu ul li a
+        {
+        color:white;
+        }
+        .ufooter
+        {
+        min-height:400px;
+        }
+        .bfooter
+        {
+        min-height:30px;
+        }
+
+</style>
 </head>
 <body>
-$END$
+  <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+  
+    <div class="container-fluid">
+      <div class="row t1  text-center bg-mycolor text-light py-1" style="background:linear-gradient(#ffea00e6,#cc0000,#77cc00); min-height: 40px;">
+        <div class="col-lg-3 col-md-6 col-sm-12 " >
+          <i class="fa-solid fa-envelope"></i>     
+          <a href="Mailto:rajankushwaha819@gmail.com" style="text-decoration: none; color:white;">rajankushwaha819@gmail.com</a>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <i class="fa-solid fa-phone fa-spin-pulse"></i>  
+          Helpline No :<a href="tel:+91 9653028979" style="text-decoration: none; color:white;">+91 9653028979</a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <i class="fa-solid fa-certificate"></i>  An ISO Certified Software Company
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12" >
+           <a href="https://www.instagram.com/rajanofficer/" style=" color: white;"><i class="fa-brands fa-square-instagram"></i></a> 
+            &nbsp;<a href="https://www.facebook.com/rajan.kushwaha.5836"style=" color: white;"><i class="fa-brands fa-square-facebook"></i></a>
+            &nbsp;<a href="https://wa.me/qr/M6BTGA4MJQDNA1"style=" color: white;"><i class="fa-brands fa-square-whatsapp"></i></a> 
+            &nbsp;<a href="https://www.youtube.com/@UPHUB369/videos"style=" color: white;"><i class="fa-brands fa-square-youtube"></i></a> 
+            &nbsp;<a href="https://twitter.com/RAJANKU63374902"style=" color: white;"><i class="fa-brands fa-square-twitter"></i></a>
+        </div>
+      </div>  
+        <div class="row t2" style="min-height: 50px;">
+          <div class="col-sm-10 mx-auto py-2">
+            <div class="row  ">
+              <div class="col-sm-4 fs-2">
+                Big  <b class="txt-mycolor">Mall
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </b>
+              </div>
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3 text-end">
+                    {% if request.session.user %}
+                <a href="/user/cartitems/" class="btn text-light " style="background:radial-gradient(#FF8800 50%,#CC0000);">Cart
+                  <i class="fa-solid fa-cart-shopping"></i> 
+                    <b class="badge text-bg-light">{{request.session.cartitems}}</b>
+                </a>
+                <a href="/user/orderlist/" class="btn text-light " style="background:radial-gradient(#FF8800 50%,#CC0000);">My Order
+                  <i class="fa-solid fa-truck-fast"></i>
+                
+                </a>
+                {% else %}
+                <a href="/user/cartitems/" class="btn text-light " style="background:radial-gradient(#FF8800 50%,#CC0000);">Cart
+                  <i class="fa-solid fa-cart-shopping"></i> 
+                    <b class="badge text-bg-light">0</b>
+                </a>
+                {% endif %}
+            </div>
+              <div class="col-sm-2 fs-5">
+                {% if request.session.user %}
+                
+                  <a href="/user/myprofile/"  style="text-decoration: none; color: black" >{{request.session.username}}
+                    <img src="/{{request.session.userpic}}" style="max-height:45px; width:50px;" class="img-thumbnail"/>
+                  </a>
+              
+                {% else %}
+                  
+                    <a href="#" class="nav-link disabled"> Default User
+                      <img src="{% static 'images/user.png'%}" style=height:45px;" class="img-thumbnail"/>
+                    </a>
+                  
+                  {% endif %}
+              </div>
+          </div>
+        </div>
+        <div class="row t3 " style="background:linear-gradient(60deg,#ffea00e6,#cc0000,#77cc00);">
+          <div class="col-sm-8 mx-auto">
+                <!--start menu-->
+                <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+                  <div class="container-fluid">
+                
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="/user/index/"><i class="fa-solid fa-house"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/user/about/"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="/user/product/"><i class="fa-brands fa-product-hunt"></i> Product</a>
+                        </li>
+                      
+                        <li class="nav-item">
+                          <a class="nav-link" href="/user/contact/"><i class="fa-solid fa-location-dot"></i> costomer Support</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="/user/signup/"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/user/myprofile/"><i class="fa-solid fa-user"></i> My Profile</a>
+                        </li>
+                        
+                          {% if request.session.user %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="/user/signout/"><i class="fa-solid fa-right-to-bracket"></i> Sign Out</a>
+                          </li>
+                          {% else %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="/user/signin/"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+                          </li>
+                          {% endif %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="/user/orderlist/"><i class="fa-solid fa-truck-fast"></i> Order List</a>
+                          </li>
+                       
+                      </ul>
+                
+                       
+                      </div>
+                    </div>
+                  </nav>
+                <!--end menu-->
+          </div>
+        </div>
+      
+    </div>
+   {% block content %}
+   {% endblock %}
+      <div class="row ufooter bg-dark">
+        <div class="col-4">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://org.gem.gov.in/aboutus"><img src="{% static 'images/Government.png'%}" style="height: 95px; width: 300px; padding-top: 20px;"></a>
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://www.startupindia.gov.in/"><img src="{% static 'images/startupindia.png'%}" style="height: 95px; width: 300px; padding-top: 10px;"></a>
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/@UPHUB369"><img src="{% static 'images/uphub.jpg'%}" style="height: 95px; width: 300px; padding-top: 10px;"></a>
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="https://play.google.com/store/apps/details?id=com.techpile&pli=1"><img src="{% static 'images/GooglePlay.png'%}" style="height: 95px; width: 300px; padding-top: 10px;"></a>
+        </div>
+        <div class="col-sm-4"  >
+          <br><h1 style="color:white;"><u >Contact </u>Info</h1>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b style="color: darkorange; font-size: 20px;"><i class="fa-solid fa-location-dot"></i><u>Mall </u>Address</b> 
+          <p style="color: white;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Plot No-55,Near by Banthara Post Office <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Kanpur Road, Banthara
+            <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Banthara,Lucknow <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Uttar Pradesh 226401
+            </p>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b style="color: darkorange; font-size: 20px;"> <i class="fa-solid fa-phone fa-spin-pulse"></i><u>Call </u>Us</b> 
+        <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+91 9653028979 " style="text-decoration: none; color:white;">+91 9653028979</a>
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+91 9653028979 " style="text-decoration: none; color: white;">+91 7052435535</a>
+         </p>
+       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b style="color: darkorange; font-size: 20px;"><i class="fa-solid fa-envelope"></i> <u>Mail </u>US</b> 
+       <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="Mail to:rajankushwaha819@gmail.com" style="text-decoration: none; color:white;">rajankushwaha819@gmail.com</a>
+       </p>
+      </div>
+        <div class="col-4">
+          <p style="color:rgb(255, 166, 0) ; font-size: 50px;"> <b>Big  <u> Mall</b></u></p>
+          <p style="color: white;">It is a E-commerce Site to sell the many product like food,helth product,cleaning product,
+          baby product, cold drink and etc. So our visit of my website and purchesh some products and give the feedback and encourage my website.</p>
+          <p style="color:rgb(255, 166, 0) ; font-size: 25px;"> <b><u>Stay  Con</u>nected</b></p>
+                 
+                  <a href="https://www.instagram.com/rajanofficer/" style=" color: white;"><i class="fa-brands fa-square-instagram"></i></a> 
+                  &nbsp;&nbsp;&nbsp;
+                  <a href="https://www.facebook.com/rajan.kushwaha.5836"style=" color: white;"><i class="fa-brands fa-square-facebook"></i></a>
+                  &nbsp;&nbsp;&nbsp;
+                  <a href="https://wa.me/qr/M6BTGA4MJQDNA1"style=" color: white;"><i class="fa-brands fa-square-whatsapp"></i></a> 
+                  &nbsp;&nbsp;&nbsp;
+                  <a href="https://www.youtube.com/@UPHUB369/videos"style=" color: white;"><i class="fa-brands fa-square-youtube"></i></a> 
+                  &nbsp;&nbsp;&nbsp;
+                  <a href="https://twitter.com/RAJANKU63374902"style=" color: white;"><i class="fa-brands fa-square-twitter"></i></a>
+                
+        </div>
+      </div>
+      <div class="row bfooter bg-dark mt-1">
+       <div class="col-6">
+       <p style="color: white; font-size: 15px; line-height: 40px;"> &nbsp;&nbsp;&nbsp;©  2023 <a href="https://www.techpile.in/" target="_blank" style="color:rgb(255, 166, 0); text-decoration: none;"> Techpile Technology Pvt. Ltd.  </a>  2023 | Developed By <u><a href="/user/mprofile/" style=" color:rgb(255, 166, 0) ;">    Mr. RAJAN KUSHWAHA</a></u></p></div>
+       <div class="col-6 "><a class="nav-link" href="/user/privacy/" style="color:rgb(255, 166, 0); text-decoration: none; line-height: 40px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Privacy  and  Policy</a></div>
+
+
+      </div>
+      
 </body>
 </html>

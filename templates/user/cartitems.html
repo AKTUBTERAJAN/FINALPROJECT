@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="text-center fs-2"> Our <b class="txt-mycolor"><u>Cart item </u> <i class="fa-solid fa-cart-shopping"></i></b></div>
+<h6 style="text-align: center;">Your all added item in cart</h6>
+{% if not request.session.user %}
+<script>
+  alert('You have to login first....')
+  location.href='/user/signin/'
+</script>
+{% endif %}
+<div class="row p-5">
+    <div class="col-sm-8 mx-auto">
+        <!--cartiem-->
+        {% for i in cartdata %}
+        <div class="card mb-3 " style="background-color: rgb(236, 235, 235);" >
+            <div class="row g-0">
+              <div class="col-md-2 p-2">
+                <img src="/{{i.product_picture}}" style="height: 130px;width: 130px; padding: 10px;"  class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Card Id</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Subtotal</th>
+                            <th>Added Date</th>
+                            <th>Cancel</th>
+
+                        </tr>
+                        <tr>
+                            <td>Bigmall10{{i.id}}</td>
+                            <td>
+                                <b>{{i.product_name}}</b><br>
+                                <small>{{i.pw}}</small>
+                            </td>
+                           
+                            <td>{{i.quantity}}</td>
+                            <td>{{i.price}}/-</td>
+                            <td>{{i.total_price}}/-</td>
+                            <td>{{i.added_date}}</td>
+                            <td> <a href="/user/cartitems?cid={{i.id}}" class="btn btn-danger btn-sm"> Remove <i class="fa-solid fa-trash"></i></a> </td>
+                        </tr>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--endcart-->
+     {% endfor %}   
+     <a href="/user/order?msg=1" class="btn btn-danger ">CHECKOUT ALL</a>
+    </div>
+</div>
+{% endblock %}

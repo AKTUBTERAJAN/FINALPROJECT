@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    #upform
+    {
+        display: none;
+    }
+    .form-control
+    {
+        height: 50px;
+        margin-bottom: .8%;
+    }
+</style>
+<script>
+    function demo()
+    {
+        document.getElementById('upform').style.display="block";
+        
+    }
+</script>
+<div class="text-center fs-2">
+     My<b class="txt-mycolor"><u>Profile</u> <i class="fa-solid fa-user"></i></b>
+    <h6>You can contact us by contact number or fill this form any time you need professional support <br> or have any question</h6>
+
+</div>
+{% if not request.session.user %}
+<SCript>
+    alert('You have to login first...');
+    location.href="/user/signin/";
+</SCript>
+{% endif %}
+<div class="row mx-auto">
+    <div class="col-sm-8 mx-auto" >
+        {% for i in rdata %}
+        <!--My profile-->
+            <div class="card mb-3" style="width: 700px;background-color: rgb(211, 246, 246);" >
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/{{i.profile}}" class="img-fluid rounded-start" style="height:250px;padding: 15px;">
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="fa-solid fa-user" style=" border: 1px solid var(--txtcolor);height:35px;width:35px;line-height:35px; text-align: center;"></i> {{i.name}} <br>
+                                <i class="fa-solid fa-envelope" style=" border: 1px solid var(--txtcolor);height:35px;width:35px;line-height:35px; text-align: center;" ></i> {{i.email}} <br>
+                                <i class="fa-solid fa-phone" style=" border: 1px solid var(--txtcolor);height:35px;width:35px;line-height:35px; text-align: center;" ></i> {{i.mobile}} <br>
+                                <i class="fa-solid fa-lock" style=" border: 1px solid var(--txtcolor);height:35px;width:35px;line-height:35px; text-align: center;" ></i> {{i.passwd}} <br>
+                                <i class="fa-solid fa-location-dot" style=" border: 1px solid var(--txtcolor);height:35px;width:35px;line-height:35px; text-align: center;" ></i> {{i.address}} <br><br>
+                                <a href="#" onclick="demo()" class="btn btn-sm text-bg-dark"> Edit Profile <i class="fa-solid fa-pen-to-square"></i></a>
+                            </p>
+                
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--end profile-->
+    </div>
+    
+</div>
+{% endfor %}
+
+<div class="row py-3 mt-3"  id="upform">
+<!--form-->
+<div class="col-sm-7 mx-auto "  style="border: 2px solid red; padding: 10px;margin: 10px;border-radius: 5px; background:linear-gradient(60deg,#ffea00e6,#cc0041,#77cc00);">
+    <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       Name <div class="input-group my-2">
+           <i class="input-group-text bg-mycolor text-light" style="width: 50px; text-align: center; height: 45px">
+               <i class="fa-solid fa-user"></i>
+           </i>
+           <input type="text" required name="name" placeholder="Name.." class="form-control">
+       </div> 
+      
+       Mobile <div class="input-group my-2">
+           <i class="input-group-text bg-mycolor text-light" style="width: 50px; text-align: center; height: 45px">
+               <i class="fa-solid fa-phone"></i>
+           </i>
+           <input type="number" required name="mobile" placeholder="Mobile.." class="form-control">
+       </div> 
+       Password<div class="input-group my-2">
+           <i class="input-group-text bg-mycolor text-light" style="width: 50px; text-align: center; height: 45px">
+               <i class="fa-solid fa-key"></i>
+           </i>
+           <input type="password" required name="passwd" placeholder="Password.." class="form-control">
+       </div>  
+       Profile Picture<div class="input-group my-2">
+           <i class="input-group-text bg-mycolor text-light" style="width: 50px; text-align: center; height: 45px">
+               <i class="fa-regular fa-image"></i>
+           </i>
+           <input type="file" required name="fu" class="form-control">
+       </div>  
+       Address<div class="input-group my-2">
+           <i class="input-group-text bg-mycolor text-light" style="width: 50px; text-align: center; height: 45px">
+               <i class="fa-solid fa-location-dot"></i>
+           </i>
+           <textarea class="form-control" name="address" placeholder="Address.."></textarea>
+       </div> 
+       <input type="submit" value="save" class="btn bg-mycolor"/>
+
+    </form>
+   </div>
+<!--end form-->
+</div>
+{% endblock %}

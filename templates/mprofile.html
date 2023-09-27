@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="text-center fs-2">
+     Our <b class="txt-mycolor"><u>Profile</u> <i class="fa-solid fa-circle-info"></i></b>
+    <h5>My Profile </h5>
+</div>    
+<div class="row ">
+    <div class="card mb-3 mx-auto" style="max-width: 540px;margin: 20px;background-color: rgb(211, 246, 246);"">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'images/rajan.jpg'%}" style="padding: 10px;" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title">RAJAN KUSHWAHA</h3>
+              <a href="#" style="text-decoration: none;">rajankushwaha819@gmail.com</a>
+             <br> Contact :<a href="tel:+91 9653028979" style="text-decoration: none; ">+91 9653028979</a>
+             <br> College= Prasad Polytechnic Lucknow
+             <br>Branch= Diploma in Computer Science 2 <sup>nd</sup> Year
+               </div>
+          </div>
+        </div>
+      </div>
+</div>    
+    
+{% endblock %}

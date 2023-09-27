@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    .form-control
+    {
+        height: 45px;
+        margin-bottom: 1%;
+    }
+</style>
+<div class="text-center fs-2">
+   <u> About <b class="txt-mycolor"></u>Us <i class="fa-solid fa-circle-info"></i></b>
+   <h6>There are Multiple reasons to choose us for multiple purpuse releted product explore. Belive me you <br> we find us best suibatle</h6>
+   
+</div>
+<div class="row" style="padding: 30px;">
+    <div class="col-6">
+        <video src="{% static 'images/Bigmall.mp4' %}" autoplay  controls  poster="{% static 'images/Malls.png' %}" class="w-100" style="height: 300px;  text-align: left;"></video>
+    </div>
+    <div class="col-6">
+        <h3>Welcome to Big Mall , Just Here is some little word to <u style="color: rgb(255, 179, 0);">describe Our site</u> </h3><br>
+        Big Mall is guided by four principles: customer obsession rather than competitor focus, passion for invention, commitment to operational 
+        excellence, and long-term thinking. Big Mall strives to be Earth’s most customer-centric company, Earth’s best employer, and Earth’s safest
+         place to work. Customer reviews, 1-Click shopping, personalized recommendations, Fire tablets, Fire TV, , Just Walk Out
+          technology, and TheClimate Pledge are some of the things pioneered by Big Mall.
+    </div>
+</div>
+</div>
+
+{% endblock %}
+

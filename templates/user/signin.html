@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+  .form-control
+  {
+      height: 45px; 
+      margin-bottom: 1%;
+  }
+</style>
+<div class="text-center fs-2">
+ <b class="txt-mycolor"><u> Sign In</u> <i class="fa-solid fa-right-to-bracket"></i></b>
+</div>
+<legend>
+<div class="row p-4" >
+    <div class="col-sm-5 mx-auto" style=" padding: 60px;border-radius: 10px; background-color: rgb(211, 246, 246); height: 400px; text-align: center;">
+      <form method="post"><b>Welcome to Big Mall</b><br><h6>Login to Your Online Site</h6><br>
+          {% csrf_token %}
+        <div class="input-group my-2">
+            <i class="input-group-text bg-mycolor text-light" style="width: 50px; text-align: center; height: 45px;"><i class="fa-solid fa-user"></i>
+            </i>
+          <input type="email" placeholder="Username.." required name="email" class="form-control">
+        </div>
+        <div class="input-group my-2">
+            <i class="input-group-text bg-mycolor text-light" style="width: 50px; text-align: center;  height: 45px">
+                <i class="fa-solid fa-key"></i>
+            </i>
+          <input type="password" placeholder="password.." required name="passwd" class="form-control" >
+        </div>
+        <input type="submit" value="Login" class="btn bg-mycolor" style="width: 470px; border-radius: 20px; margin: 15px;"/>
+      </form>
+    </div>
+  </div>
+</legend>
+{% endblock  %}
+
